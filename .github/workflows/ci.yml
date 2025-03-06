@@ -25,8 +25,8 @@ jobs:
           
       - name: Install Dependencies
         run: npm install
-        working-directory: react-prop/prop  # This is the path you're using
+        working-directory: prop
 
       - name: Run Tests
         run: npm test
-        working-directory: react-prop/prop  # Same here
+        working-directory: prop
