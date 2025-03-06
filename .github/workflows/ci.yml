@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: '18'
       - name: Install Dependencies
-        run: npm install -y
+        run: npm install
+        working-directory: react-prop/prop
       - name: Run Tests
         run: npm test
+        working-directory: react-prop/prop
