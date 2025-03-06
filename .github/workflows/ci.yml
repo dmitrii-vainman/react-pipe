@@ -1,26 +1,22 @@
-name: CI Pipeline
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Debug Directory Structure
+        run: ls -R  # This will list all files and directories
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          
       - name: Install Dependencies
         run: npm install
-        working-directory: react-prop/prop
+        working-directory: react-prop/prop  # This is the path you're using
+
       - name: Run Tests
         run: npm test
-        working-directory: react-prop/prop
+        working-directory: react-prop/prop  # Same here
